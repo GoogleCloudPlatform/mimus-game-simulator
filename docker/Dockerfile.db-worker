@@ -1,0 +1,20 @@
+FROM debian:jessie
+MAINTAINER joeholley@google.com
+
+RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
+RUN apt-get update
+RUN apt-get -y upgrade
+RUN apt-get -y install cython python-pip python-MySQLdb
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN pip install google-api-python-client
+RUN pip install gcloud
+RUN pip install redis
+RUN pip install retrying
+
+COPY . /mimus
+WORKDIR /mimus
+
+ENTRYPOINT ["/usr/bin/python", "./db_worker.py"]
+CMD ["-v", "-f", "/mimus/mimus_cfg.py"]
