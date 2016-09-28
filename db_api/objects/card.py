@@ -116,7 +116,7 @@ def evolve(dest, card_ids):
                                                        'evolves': dest['id']})
         queries_to_execute.append((query, 'affected'))
 
-# 'Evolve' the destination card by changing it card type to a rarer one.
+    # 'Evolve' the destination card by changing its card type to a rarer one.
     query = db_api_query.update(table_schema, dest['id'],
                                 {'type': dest['type'] + 1,
                                  'xp01': 0})
