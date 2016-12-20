@@ -6,7 +6,7 @@ four major components and two executables.
 
 This sample source code was used to arrive at the load numbers 
 recommended in 
-https://cloud.google.com/solutions/mobile/mobile-gaming-cloud-sql-second and
+https://cloud.google.com/solutions/mobile/mobile-game-backend-cloud-sql and
 is provided for reference.  It is not intended as a production service 
 or tutorial.
 
