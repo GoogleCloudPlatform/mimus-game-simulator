@@ -314,7 +314,7 @@ class Session(object):
                     # Roll d100
                     roll = random.random()
                     if roll <= loot_table['drop_chance']:
-                        # This can be replaced with a more advanced probablistic function, just
+                        # This can be replaced with a more advanced probabilistic function, just
                         # random for now
                         card_type = random.randint(loot_table['min'],
                                                    loot_table['max'])
